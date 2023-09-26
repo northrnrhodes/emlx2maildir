@@ -58,7 +58,7 @@ class PlistHandler(xml.sax.handler.ContentHandler):
 		elif name in ("plist", "data"):
 			pass
 		else:
-			print "Unknown tag: %s" % name
+			print ("Unknown tag: %s") % name
 	def characters(self, chars):
 		self.value += chars
 
@@ -146,7 +146,7 @@ def emlx_message_dirs(emlx_dir):
 		elif search:
 			subfolder = os.path.join(emlx_dir, x)
 			if	os.path.isdir(subfolder):
-				print "Recursing into %r" % (subfolder)
+				print ("Recursing into %r") % (subfolder)
 				for tmp in emlx_message_dirs(subfolder):
 					yield tmp
 
@@ -193,7 +193,7 @@ def main():
 
 	def P(s):
 		if not opts.quiet:
-			print s
+			print (s)
 	def V(s):
 		if opts.dry_run or opts.verbose:
 			P(s)
